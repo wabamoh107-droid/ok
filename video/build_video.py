@@ -28,42 +28,42 @@ TIMELINE = [
     # ── الهوك: الباب، الدخول، اللغز
     (0,    45,  ["01_door_closed", "02_keyhole", "03_hallway", "09_police_tape"]),
     # ── المقدمة + الدار البيضاء
-    (45,   90,  ["04_casablanca_night", "05_case_file", "01_door_closed", "03_hallway"]),
+    (45,   90,  ["04_casablanca_night", "05_case_file", "01_door_closed", "22_kitchen"]),
     # ── ركزو معايا / بداية القضية
     (90,  167,  ["05_case_file", "04_casablanca_night", "02_keyhole", "09_police_tape",
-                 "01_door_closed", "03_hallway"]),
+                 "01_door_closed", "18_shop_street"]),
     # ── البلاغ + الوصول
     (167, 235,  ["06_phone_station", "07_police_lights", "08_crowd", "09_police_tape"]),
     # ── دخول العميد + المعاينة
-    (235, 275,  ["03_hallway", "10_gloves", "09_police_tape", "02_keyhole"]),
+    (235, 275,  ["03_hallway", "22_kitchen", "10_gloves", "09_police_tape"]),
     # ── الشرطة العلمية / البحث
     (275, 340,  ["10_gloves", "02_keyhole", "03_hallway", "05_case_file"]),
     # ── دار مرتبة / الماريو / بلا اقتحام
-    (340, 376,  ["01_door_closed", "02_keyhole", "03_hallway", "09_police_tape"]),
+    (340, 376,  ["01_door_closed", "16_gold_jewelry", "02_keyhole", "03_hallway"]),
     # ── التحقيق + الشهود
     (376, 440,  ["19_interrogation", "18_shop_street", "08_crowd", "05_case_file"]),
     # ── العائلة / الطرق مسدودة / الانتظار
-    (440, 482,  ["05_case_file", "10_gloves", "04_casablanca_night", "03_hallway"]),
+    (440, 482,  ["05_case_file", "10_gloves", "04_casablanca_night", "19_interrogation"]),
     # ── التقرير + القضية الثانية
     (482, 560,  ["05_case_file", "04_casablanca_night", "06_phone_station",
-                 "07_police_lights", "09_police_tape"]),
+                 "07_police_lights", "21_villa"]),
     # ── الفيلا
-    (560, 610,  ["01_door_closed", "03_hallway", "02_keyhole", "10_gloves"]),
+    (560, 610,  ["21_villa", "22_kitchen", "16_gold_jewelry", "09_police_tape"]),
     # ── الريحة + البحث على الكاميرات
-    (610, 714,  ["03_hallway", "10_gloves", "18_shop_street", "04_casablanca_night",
-                 "02_keyhole", "09_police_tape"]),
+    (610, 714,  ["23_cleaning", "22_kitchen", "21_villa", "24_construction",
+                 "10_gloves", "25_dark_car"]),
     # ── الشاهد + البحث 23 يوم
-    (714, 790,  ["18_shop_street", "08_crowd", "04_casablanca_night", "05_case_file"]),
+    (714, 790,  ["24_construction", "25_dark_car", "26_waiting_corner", "05_case_file"]),
     # ── نجية + الاستجواب
-    (790, 840,  ["19_interrogation", "05_case_file", "10_gloves", "02_keyhole"]),
+    (790, 840,  ["19_interrogation", "05_case_file", "26_waiting_corner", "10_gloves"]),
     # ── الخطة
-    (840, 900,  ["01_door_closed", "02_keyhole", "03_hallway", "16_gold_jewelry"]),
+    (840, 900,  ["26_waiting_corner", "01_door_closed", "16_gold_jewelry", "23_cleaning"]),
     # ── الربط + الحل
-    (900, 960,  ["05_case_file", "09_police_tape", "10_gloves", "02_keyhole"]),
+    (900, 960,  ["05_case_file", "02_keyhole", "09_police_tape", "19_interrogation"]),
     # ── الحكم
-    (960, 1010, ["19_interrogation", "05_case_file", "04_casablanca_night"]),
+    (960, 1010, ["27_courtroom", "19_interrogation", "05_case_file"]),
     # ── الخاتمة
-    (1010, 1064,["01_door_closed", "04_casablanca_night", "02_keyhole", "05_case_file"]),
+    (1010, 1064,["01_door_closed", "04_casablanca_night", "02_keyhole", "27_courtroom"]),
 ]
 
 # حركات Ken Burns — (نوع, وصف)
