@@ -13,6 +13,17 @@ W, H = 1280, 720
 
 # (المصدر, اسم الخرج, بلاصة الفراغ للنص, معالجة)
 JOBS = [
+    ("thumb_v2_door", "thumb_MAIN_door", "يسار (نص كحل كبير)",
+     "eq=contrast=1.20:saturation=1.12:brightness=0.015,"
+     "unsharp=5:5:1.0:5:5:0.0,"
+     "colorbalance=rs=-0.03:bs=0.05,"
+     "vignette=PI/4.8"),
+
+    ("thumb_v2_keyhole", "thumb_ALT_keyhole", "يمين",
+     "eq=contrast=1.26:saturation=1.08,"
+     "unsharp=5:5:1.0:5:5:0.0,"
+     "vignette=PI/4.4"),
+
     ("thumb_base",  "thumb_01_door_ajar",   "يسار",
      "eq=contrast=1.22:saturation=1.10:brightness=0.01,"
      "unsharp=5:5:0.9:5:5:0.0,"
