@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ملف الثقة المكسورة</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: #0a0e12;
+    color: #e8e3d8;
+    font-family: system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+    padding: 16px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 {
+    font-size: clamp(20px, 5vw, 28px);
+    text-align: center;
+    background: linear-gradient(180deg, #f0e6d2, #c9a961);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 6px;
+  }
+  .sub { text-align: center; color: #7d8b96; font-size: 14px; margin-bottom: 20px; }
+
+  .player { background:#000; border-radius:12px; overflow:hidden; margin-bottom:22px;
+            box-shadow:0 12px 40px rgba(0,0,0,.6); }
+  video { width:100%; display:block; background:#000; }
+
+  .big {
+    display: block;
+    background: linear-gradient(135deg, #c9a961, #a8873f);
+    color: #10151a;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    border-radius: 14px;
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 20px rgba(201,169,97,.25);
+  }
+  .big:active { transform: scale(.98); }
+  .big small { display:block; font-weight:600; font-size:14px; opacity:.75; margin-top:4px; }
+
+  .alt {
+    display: block;
+    background: #1b2430;
+    border: 1px solid #2c3844;
+    color: #dfe6ec;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .alt small { display:block; font-weight:400; font-size:13px; color:#7d8b96; margin-top:3px; }
+
+  .steps {
+    background: #121821;
+    border: 1px solid #212c37;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  .steps h3 { color:#c9a961; font-size:15px; margin-bottom:10px; }
+  .steps ol { padding-right: 20px; color:#b8c3cc; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>ملف الثقة المكسورة</h1>
+  <div class="sub">17:43 · معكم عبدو</div>
+  <div style="text-align:center;color:#5d6c78;font-size:13px;margin:-14px 0 20px">صوت نقي بلا مؤثرات</div>
+
+  <div class="player">
+    <video controls preload="metadata" playsinline poster="thumbnails/thumb_01_door_ajar.jpg">
+      <source src="SMALL_NOSFX.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <a class="big" href="SMALL_NOSFX.mp4" download="ملف_الثقة_المكسورة.mp4">
+    ⬇️ حمّل الفيديو
+    <small>22 ميغا · خفيف وسريع</small>
+  </a>
+
+  <a class="alt" href="SMALL.mp4" download="ملف_الثقة_المكسورة_بالمؤثرات.mp4">
+    🔊 النسخة بالمؤثرات الصوتية
+    <small>22 ميغا · إلا بغيتيها</small>
+  </a>
+
+  <a class="alt" href="VOICE_ONLY.mp3" download="ملف_الثقة_المكسورة.mp3">
+    🎧 الصوت فقط (بلا مؤثرات)
+    <small>17 ميغا · MP3</small>
+  </a>
+
+  <div class="steps">
+    <h3>📱 إلا ما تحملش</h3>
+    <ol>
+      <li>ضغط <b>مطوّل</b> على الفيديو فوق</li>
+      <li>ختار <b>«حفظ الفيديو»</b> ولا <b>«Download video»</b></li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>
