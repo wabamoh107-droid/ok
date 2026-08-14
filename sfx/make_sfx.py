@@ -8,20 +8,20 @@ rng = np.random.default_rng(7)
 
 
 def save(name, x, gain=1.0):
+    import subprocess, imageio_ffmpeg
     x = np.asarray(x, dtype=np.float64) * gain
     m = np.max(np.abs(x)) or 1.0
     x = x / m * 0.85
-    # fade in/out قصير باش نتفاداو الطقطقة
     n = min(int(0.008 * SR), len(x) // 2)
     if n > 0:
         x[:n] *= np.linspace(0, 1, n)
         x[-n:] *= np.linspace(1, 0, n)
-    d = (x * 32767).astype(np.int16)
     p = os.path.join(OUT, name)
-    with wave.open(p, "wb") as w:
-        w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
-        w.writeframes(d.tobytes())
-    print(f"  ✓ {name}  ({len(x)/SR:.2f}s)")
+    FF = imageio_ffmpeg.get_ffmpeg_exe()
+    subprocess.run([FF, "-v", "error", "-y", "-f", "f32le", "-ac", "1",
+                    "-ar", str(SR), "-i", "-", p],
+                   input=x.astype(np.float32).tobytes(), check=True)
+    print(f"  \u2713 {name}  ({len(x)/SR:.2f}s)")
 
 
 def t(dur):
@@ -565,41 +565,41 @@ def clock_wall(dur=10.0):
 if __name__ == "__main__":
     print("🎚️  كنولّد المؤثرات الصوتية…")
     print("\n— المجموعة 1: الأساسيات —")
-    save("01_phone_ring.wav",     phone_ring(3))
-    save("02_door_knock.wav",     door_knock(3))
-    save("03_footsteps.wav",      footsteps(9, 0.58))
-    save("04_crowd.wav",          crowd(9.0))
-    save("05_tension_drone.wav",  tension_drone(14.0))
-    save("06_impact.wav",         impact())
-    save("07_whoosh.wav",         whoosh())
-    save("08_clock_tick.wav",     clock_tick(8.0))
-    save("09_door_open.wav",      door_open())
+    save("01_phone_ring.flac",     phone_ring(3))
+    save("02_door_knock.flac",     door_knock(3))
+    save("03_footsteps.flac",      footsteps(9, 0.58))
+    save("04_crowd.flac",          crowd(9.0))
+    save("05_tension_drone.flac",  tension_drone(14.0))
+    save("06_impact.flac",         impact())
+    save("07_whoosh.flac",         whoosh())
+    save("08_clock_tick.flac",     clock_tick(8.0))
+    save("09_door_open.flac",      door_open())
 
     print("\n— المجموعة 2: الشرطة والتحقيق —")
-    save("10_police_siren.wav",   police_siren(9.0, "wail"))
-    save("11_siren_yelp.wav",     police_siren(5.0, "yelp"))
-    save("12_paper_turn.wav",     paper_turn(4))
-    save("13_paper_single.wav",   paper_single())
-    save("14_camera_shutter.wav", camera_shutter(3))
-    save("15_keyboard.wav",       keyboard_typing(6.0))
-    save("16_car_engine.wav",     car_engine(8.0, True))
-    save("17_car_door.wav",       car_door())
-    save("18_handcuffs.wav",      handcuffs())
-    save("19_cell_door.wav",      cell_door())
-    save("20_radio_chatter.wav",  radio_chatter(7.0))
-    save("21_evidence_bag.wav",   evidence_bag())
+    save("10_police_siren.flac",   police_siren(9.0, "wail"))
+    save("11_siren_yelp.flac",     police_siren(5.0, "yelp"))
+    save("12_paper_turn.flac",     paper_turn(4))
+    save("13_paper_single.flac",   paper_single())
+    save("14_camera_shutter.flac", camera_shutter(3))
+    save("15_keyboard.flac",       keyboard_typing(6.0))
+    save("16_car_engine.flac",     car_engine(8.0, True))
+    save("17_car_door.flac",       car_door())
+    save("18_handcuffs.flac",      handcuffs())
+    save("19_cell_door.flac",      cell_door())
+    save("20_radio_chatter.flac",  radio_chatter(7.0))
+    save("21_evidence_bag.flac",   evidence_bag())
 
     print("\n— المجموعة 3: الجو والتوتر —")
-    save("22_rain.wav",           rain(12.0, False))
-    save("23_rain_heavy.wav",     rain(10.0, True))
-    save("24_wind.wav",           wind(12.0))
-    save("25_heartbeat.wav",      heartbeat(7, 62))
-    save("26_ticking_pressure.wav", ticking_pressure(10.0))
+    save("22_rain.flac",           rain(12.0, False))
+    save("23_rain_heavy.flac",     rain(10.0, True))
+    save("24_wind.flac",           wind(12.0))
+    save("25_heartbeat.flac",      heartbeat(7, 62))
+    save("26_ticking_pressure.flac", ticking_pressure(10.0))
 
     print("\n— المجموعة 4: الانتقالات —")
-    save("27_stinger_reveal.wav", stinger_reveal(4.0))
-    save("28_sub_drop.wav",       sub_drop())
-    save("29_whoosh_down.wav",    whoosh(1.9, rise=False))
-    save("30_clock_wall.wav",     clock_wall(10.0))
+    save("27_stinger_reveal.flac", stinger_reveal(4.0))
+    save("28_sub_drop.flac",       sub_drop())
+    save("29_whoosh_down.flac",    whoosh(1.9, rise=False))
+    save("30_clock_wall.flac",     clock_wall(10.0))
 
     print("\n✅ سالا — 30 مؤثر.")

@@ -91,14 +91,14 @@ if __name__ == "__main__":
     print(f"  مدة التعليق: {vdur:.1f}s")
 
     # المؤثرات
-    drone  = load(f"{SFX}/05_tension_drone.wav")
-    knock  = load(f"{SFX}/02_door_knock.wav")
-    dopen  = load(f"{SFX}/09_door_open.wav")
-    steps  = load(f"{SFX}/03_footsteps.wav")
-    crowd  = load(f"{SFX}/04_crowd.wav")
-    impact = load(f"{SFX}/06_impact.wav")
-    whoosh = load(f"{SFX}/07_whoosh.wav")
-    phone  = load(f"{SFX}/01_phone_ring.wav")
+    drone  = load(f"{SFX}/05_tension_drone.flac")
+    knock  = load(f"{SFX}/02_door_knock.flac")
+    dopen  = load(f"{SFX}/09_door_open.flac")
+    steps  = load(f"{SFX}/03_footsteps.flac")
+    crowd  = load(f"{SFX}/04_crowd.flac")
+    impact = load(f"{SFX}/06_impact.flac")
+    whoosh = load(f"{SFX}/07_whoosh.flac")
+    phone  = load(f"{SFX}/01_phone_ring.flac")
 
     intro = 2.2                       # سكوت فالبداية قبل ما يبدا الراوي
     total = intro + vdur + 3.5
